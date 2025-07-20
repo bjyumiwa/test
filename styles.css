@@ -1,1 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fce4ec; /* Very light pink */
+    color: #c2185b; /* Dark pink */
+}
 
+h1 {
+    margin-bottom: 20px;
+}
+
+#game-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    width: 320px;
+    height: 320px;
+    padding: 10px;
+    background-color: #f8bbd0; /* Light pink */
+    border: 5px solid #e91e63; /* Darker pink */
+    border-radius: 8px;
+    position: relative;
+}
+
+.tile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    background-image: url('cat.png.png');
+    background-size: 320px 320px;
+    border: 1px solid #c2185b; /* Dark pink outline */
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease-in-out;
+    position: absolute; /* For smooth animations */
+    width: 75px; /* (320 - 5*3) / 4 */
+    height: 75px;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.tile:hover {
+    filter: brightness(1.1);
+}
+
+#controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+}
+
+#preview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#preview-container p {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+#preview-image {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #e91e63;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #e91e63; /* Darker pink */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #c2185b; /* Even darker pink on hover */
+}
+
+#win-message {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #880e4f; /* Darkest pink */
+}
+
+.hidden {
+    display: none;
+}
